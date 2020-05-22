@@ -1,0 +1,29 @@
+package collectionsPracticeDay2;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class RemoveDuplicates_3 {
+
+	public static void main(String[] args) {
+		String[] s = { "i", "came", "i", "saw", "i", "left" };
+		Set<String> uniques = new HashSet<String>();
+		Set<String> dups = new HashSet<String>();
+
+		for (String a : s) {
+			if (!uniques.add(a)) {
+				dups.add(a);
+
+			}
+			//System.out.println("Before using removeAll"+uniques);
+			//System.out.println(dups);
+			uniques.removeAll(dups);
+			//System.out.println("after using removeAll"+uniques);
+			//System.out.println(dups);
+		}
+		System.out.println(uniques);
+		System.out.println(dups);
+
+	}
+
+}
